@@ -1,1 +1,1 @@
-# EC Plugin v1.15
+# EC(あぁすこあ) Plugin v1.15
