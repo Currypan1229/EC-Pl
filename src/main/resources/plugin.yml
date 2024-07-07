@@ -1,0 +1,66 @@
+name: EarthCore
+version: '1.15-SNAPSHOT'
+main: com.github.tooooowa.earthcore.EarthCore
+api-version: '1.20'
+authors: [towa]
+description: It is plugin for Earth Core Server.
+commands:
+  warp:
+    description: 引数なしの場合、ワープ地点一覧GUIを開きます。引数で国指定も可。
+    usage: /<command> [<text>]
+  randomteleport:
+    description: ランダムなワープ地点にテレポートします。
+    aliases: rtp
+    usage: /<command>
+  update:
+    description: プラグインの更新用のコマンド
+    usage: /<command> <url>
+    permission: earthcore.commands.update
+  garbage:
+    description: ゴミ箱を開きます
+    usage: /<command>
+    permission: earthcore.commands.garbage
+    aliases:
+      - gomi
+  daily:
+    description: ログインボーナスを取得します
+    usage: /<command>
+    permission: earthcore.commands.daily
+    aliases:
+      - reward
+  easymenu:
+    description: 簡易メニューを開きます
+    usage: /<command>
+    permission: earthcore.commands.easymenu
+    aliases:
+      - menu
+  map:
+    description: WebマップのURLを表示します
+    usage: /<command>
+    permission: earthcore.commands.map
+
+permissions:
+  earthcore.commands.*:
+    default: false
+    description: EarthCoreプラグインの各コマンドの権限
+    children:
+      earthcore.commands.update: true
+      earthcore.commands.garbage: true
+      earthcore.commands.daily: true
+      earthcore.commands.easymenu: true
+      earthcore.commands.map: true
+  earthcore.commands.update:
+    default: false
+    description: updateコマンドの権限
+  earthcore.commands.garbage:
+    default: true
+    description: ゴミ箱コマンドの使用権限
+  earthcore.commands.daily:
+    default: true
+    description: ログインボーナス取得コマンドの使用権限
+  earthcore.commands.easymenu:
+    default: true
+    description: 簡易ロビーを開くコマンドの使用権限
+  earthcore.commands.map:
+    default: true
+    description: マップのURLを表示するコマンドの使用権限
