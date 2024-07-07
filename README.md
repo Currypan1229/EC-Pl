@@ -1,1 +1,1 @@
-# EarthCore Plugin v1.15
+# EC Plugin v1.15
